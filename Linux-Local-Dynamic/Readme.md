@@ -1,0 +1,3 @@
+This project is meant to run locally, but could be modified to run in cloud shell.  If running locally, you will need to reconfigure _main.tf with your Azure information.  When I put this together, I was using a local instance of Vault on my computer for development.  You could modify this to run out in cloud shell as well.  I just found it easier to do local development and then clone my project into cloud shell.
+
+Replace anything in <> with your own values.
