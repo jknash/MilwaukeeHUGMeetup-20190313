@@ -69,7 +69,7 @@ resource "azurerm_virtual_machine" "jumpbox-linux" {
 
     ssh_keys {
       path     = "/home/${var.linux_adminname}/.ssh/authorized_keys"
-      key_data = "${file("../ssh/devenv.pub")}"
+      #REPLACE THIS WITH YOUR OWN PATH --> key_data = "${file("../ssh/devenv.pub")}"
     }
   }
 
@@ -112,7 +112,7 @@ resource "azurerm_virtual_machine" "wlenv-linux" {
 
     ssh_keys {
       path     = "/home/${var.linux_adminname}/.ssh/authorized_keys"
-      key_data = "${file("../ssh/devenv.pub")}"
+      #REPLACE THIS WITH YOUR OWN PATH --> key_data = "${file("../ssh/devenv.pub")}"
     }
   }
 
@@ -138,7 +138,7 @@ resource "azurerm_virtual_machine_extension" "workload-servers-bootstrap" {
 
   settings = <<SETTINGS
     {
-        "fileUris": ["https://tfmeetup.blob.core.windows.net/scripts/linux/bootstrap/bootstrap-puppet-server.sh","https://tfmeetup.blob.core.windows.net/scripts/linux/bootstrap/puppet-site/site.pp","https://tfmeetup.blob.core.windows.net/scripts/linux/bootstrap/puppet-conf/puppet-master.conf"]
+        #REPLACE THIS WITH YOUR OWN PATH --> "fileUris": ["https://<REPLACE>.blob.core.windows.net/scripts/linux/bootstrap/bootstrap-puppet-server.sh","https://<REPLACE>.blob.core.windows.net/scripts/linux/bootstrap/puppet-site/site.pp","https://<REPLACE>.blob.core.windows.net/scripts/linux/bootstrap/puppet-conf/puppet-master.conf"]
     }
 SETTINGS
   protected_settings = <<PROTECTED_SETTINGS
@@ -165,7 +165,7 @@ resource "azurerm_virtual_machine_extension" "jumpbox-servers-bootstrap" {
 
   settings = <<SETTINGS
     {
-        "fileUris": ["https://tfmeetup.blob.core.windows.net/scripts/linux/bootstrap/bootstrap-standard-server.sh","https://tfmeetup.blob.core.windows.net/keys/id_rsa","https://tfmeetup.blob.core.windows.net/scripts/linux/bootstrap/puppet-conf/puppet-agent.conf"]
+        "fileUris": ["https://<REPLACE>.blob.core.windows.net/scripts/linux/bootstrap/bootstrap-standard-server.sh","https://<REPLACE>.blob.core.windows.net/keys/id_rsa","https://<REPLACE>.blob.core.windows.net/scripts/linux/bootstrap/puppet-conf/puppet-agent.conf"]
    } 
 SETTINGS
   protected_settings = <<PROTECTED_SETTINGS
