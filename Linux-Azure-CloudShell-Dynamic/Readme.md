@@ -14,3 +14,5 @@ This demo was designed to:
 - This demo creates records in Azure DNS, so you'll want to modify _vars.tf with your zone
 
 Replace anything in <> with your own values.
+
+To setup Azure Cloud shell in your own evironment: https://docs.microsoft.com/en-us/azure/cloud-shell/overview
