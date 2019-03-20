@@ -49,7 +49,7 @@ variable infra_storage_account_name {
 }
 
 variable dns_root_zone {
-  default = "x-centric.us"
+  #REPLACE THIS WITH YOUR OWN PATH --> default = "example.com"
 }
 
 variable dns_internal_zone_prefix {
